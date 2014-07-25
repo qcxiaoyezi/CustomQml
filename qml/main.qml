@@ -5,6 +5,7 @@ import QtGraphicalEffects 1.0
 
 import "./funcmousearea"
 import "./buttons"
+import "./menubar"
 
 ApplicationWindow {
     id: appWindow
@@ -48,11 +49,15 @@ ApplicationWindow {
                     }
 
                     SysBtn360{
+                        id: sysBtn
                         anchors{topMargin: -1; rightMargin: -1}
                         onShowMinimized: appWindow.showMinimized();
                         onShowMaximized: appWindow.showMaximized();
                         onShowNormal: appWindow.showNormal();
                         onClose: appWindow.close();
+                    }
+                    MenuBar{
+                        anchors{top: parent.top; right: sysBtn.left; rightMargin:5}
                     }
                 }
             }
