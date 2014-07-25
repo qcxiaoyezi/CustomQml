@@ -28,34 +28,39 @@ MouseArea{
                 var xChange =  mouse.x - originPoint.x;
                 var yChange =  mouse.y - originPoint.y;
                 var tmp;
+                var geometry = Qt.rect(target.x,target.y,target.width,target.height)
                 switch(resizeFlag[0]){
                 case "l":
-                    tmp = target.width - minWidth;
+                    tmp = geometry.width - minWidth;
                     tmp = Math.min(tmp,xChange)
-                    target.x += tmp; target.width -= tmp;
+                    geometry.x += tmp; geometry.width -= tmp;
                     break;
                 case "r":
-                    tmp = target.width - minWidth;
+                    tmp = geometry.width - minWidth;
                     tmp = Math.max(xChange,-tmp)
-                    target.width += tmp; originPoint.x += tmp;
+                    geometry.width += tmp; originPoint.x += tmp;
                     break;
                 default: break;
                 }
                 switch(resizeFlag[1]){
                 case "t":
-                    tmp = target.height - minHeight;
+                    tmp = geometry.height - minHeight;
                     tmp = Math.min(tmp,yChange);
-                    target.y += tmp;
-                    target.height -= tmp;
+                    geometry.y += tmp;
+                    geometry.height -= tmp;
                     break;
                 case "b":
-                    tmp = target.height - minHeight;
+                    tmp = geometry.height - minHeight;
                     tmp = Math.max(yChange,-tmp)
-                    target.height += tmp;
+                    geometry.height += tmp;
                     originPoint.y += tmp;
                     break;
                 default: break;
                 }
+                target.x = geometry.x;
+                target.y = geometry.y;
+                target.width = geometry.width;
+                target.height = geometry.height;
             }else{
                 if(Math.abs(mouse.x-originPoint.x)>3 || Math.abs(mouse.y-originPoint.y)>3){
                     state = "active"
@@ -65,7 +70,7 @@ MouseArea{
             if(mouse.x < 8) resizeFlag = "l"
             else if(mouse.x > width-8) resizeFlag = "r"
             else resizeFlag = "m"
-            if(mouse.y < 8) resizeFlag += "t"
+            if(mouse.y < 10) resizeFlag += "t"
             else if(mouse.y > height-8) resizeFlag += "b"
             else resizeFlag += "m"
 

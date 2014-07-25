@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/main.qml</file>
+        <file>qml/titlebar.qml</file>
+        <file>qml/funcmousearea/ResizeArea.qml</file>
+        <file>image/skin.png</file>
+        <file>image/minBtn.png</file>
+        <file>image/closeBtn.png</file>
+        <file>image/multipleBtn.png</file>
+        <file>qml/buttons/sysbtn360/BtnLeft.qml</file>
+        <file>qml/buttons/sysbtn360/BtnMid.qml</file>
+        <file>qml/buttons/sysbtn360/BtnRight.qml</file>
+        <file>qml/buttons/SysBtn360.qml</file>
+        <file>image/maxBtn.png</file>
+        <file>image/th.jpg</file>
+    </qresource>
+</RCC>
