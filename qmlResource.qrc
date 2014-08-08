@@ -13,5 +13,21 @@
         <file>qml/buttons/SysBtn360.qml</file>
         <file>image/maxBtn.png</file>
         <file>image/th.jpg</file>
+        <file>qml/menubar/MenuBar360.qml</file>
+        <file>qml/menubar/MenuBarItem360.qml</file>
+        <file>image/menuLArrow.png</file>
+        <file>image/menuRArrow.png</file>
+        <file>qml/logo/Logo360.qml</file>
+        <file>image/logo.png</file>
+        <file>qml/buttons/PushButton360.qml</file>
+        <file>image/home.png</file>
+        <file>image/star.png</file>
+        <file>image/refresh.png</file>
+        <file>image/return.png</file>
+        <file>qml/addressbar/AddressBar360.qml</file>
+        <file>qml/addressbar/AddressBarBtn360.qml</file>
+        <file>image/addressbarArrow.png</file>
+        <file>qml/statusbar/StatusBar360.qml</file>
+        <file>image/statusbarSlash.png</file>
     </qresource>
 </RCC>
