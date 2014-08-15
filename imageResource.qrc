@@ -1,0 +1,24 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/addressbarArrow.png</file>
+        <file>images/closeBtn.png</file>
+        <file>images/home.png</file>
+        <file>images/logo.png</file>
+        <file>images/maxBtn.png</file>
+        <file>images/menuLArrow.png</file>
+        <file>images/menuRArrow.png</file>
+        <file>images/minBtn.png</file>
+        <file>images/multipleBtn.png</file>
+        <file>images/refresh.png</file>
+        <file>images/return.png</file>
+        <file>images/skin.png</file>
+        <file>images/star.png</file>
+        <file>images/star2.png</file>
+        <file>images/statusbarSlash.png</file>
+        <file>images/th.jpg</file>
+        <file>images/leftSlope.png</file>
+        <file>images/rightSlope.png</file>
+        <file>images/leftSlope2.png</file>
+        <file>images/rightSlope2.png</file>
+    </qresource>
+</RCC>

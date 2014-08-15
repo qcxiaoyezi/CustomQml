@@ -2,10 +2,12 @@ TEMPLATE = app
 
 QT += qml quick widgets
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    cursor.cpp
 
 RESOURCES += \
-    qmlResource.qrc
+    qmlResource.qrc \
+    imageResource.qrc
 
 RC_FILE = appicon.rc
 
@@ -16,5 +18,8 @@ QML_IMPORT_PATH =
 include(deployment.pri)
 
 OTHER_FILES +=
+
+HEADERS += \
+    cursor.h
 
 

@@ -2,28 +2,60 @@ import QtQuick 2.2
 import QtGraphicalEffects 1.0
 
 Item{
-    width: row.width
+    id: menuBar
+    width: row.width + mouseArea.width
     height: 24
+    clip: true
 
+    MouseArea{
+        id: mouseArea
+        width: 15; height: parent.height;
+
+        Image{
+            id: image
+            anchors.centerIn: parent
+        }
+        onClicked:{ menuBar.state = ("show" != menuBar.state) ? "show" : "hide" }
+    }
     Row{
         id:row
-        anchors.verticalCenter: parent.verticalCenter
-        spacing: 1
+        anchors{left:mouseArea.right; verticalCenter: parent.verticalCenter; }
+        spacing: 2
 
-        MenuBarItem{
-            text: "文件"
-        }
-        MenuBarItem{
-            text: "查看"
-        }
-        MenuBarItem{
-            text: "收藏"
-        }
-        MenuBarItem{
-            text: "工具"
-        }
-        MenuBarItem{
-            text: "帮助"
+        Repeater {
+            model: ["文件","查看","收藏","工具","帮助"]
+            MenuBarItem{
+                text: modelData
+            }
         }
     }
+    MenuBarItem{
+        id: item1
+        text: "菜单"
+        anchors{left:mouseArea.right; verticalCenter: parent.verticalCenter; }
+    }
+
+    state: "show"
+    states:[
+        State{
+            name: "show"
+            PropertyChanges{target: image; source:"qrc:///images/menuRArrow.png"}
+            PropertyChanges{target: menuBar; width: row.width + mouseArea.width}
+            PropertyChanges{target: item1; visible: false}
+            PropertyChanges{target: row; visible: true}
+        },
+        State{
+            name: "hide"
+            PropertyChanges{target: image; source:"qrc:///images/menuLArrow.png"}
+            PropertyChanges{target: menuBar; width: item1.width + mouseArea.width}
+            PropertyChanges{target: item1; visible: true}
+            PropertyChanges{target: row; visible: false}
+        }
+    ]
+
+    transitions: [
+        Transition {
+            PropertyAnimation{target: menuBar; property: "width"; duration: 200}
+        }
+    ]
 }

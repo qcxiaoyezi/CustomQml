@@ -1,33 +1,22 @@
 <RCC>
     <qresource prefix="/">
         <file>qml/main.qml</file>
-        <file>qml/titlebar.qml</file>
-        <file>qml/funcmousearea/ResizeArea.qml</file>
-        <file>image/skin.png</file>
-        <file>image/minBtn.png</file>
-        <file>image/closeBtn.png</file>
-        <file>image/multipleBtn.png</file>
-        <file>qml/buttons/sysbtn360/BtnLeft.qml</file>
-        <file>qml/buttons/sysbtn360/BtnMid.qml</file>
-        <file>qml/buttons/sysbtn360/BtnRight.qml</file>
-        <file>qml/buttons/SysBtn360.qml</file>
-        <file>image/maxBtn.png</file>
-        <file>image/th.jpg</file>
-        <file>qml/menubar/MenuBar360.qml</file>
-        <file>qml/menubar/MenuBarItem360.qml</file>
-        <file>image/menuLArrow.png</file>
-        <file>image/menuRArrow.png</file>
-        <file>qml/logo/Logo360.qml</file>
-        <file>image/logo.png</file>
-        <file>qml/buttons/PushButton360.qml</file>
-        <file>image/home.png</file>
-        <file>image/star.png</file>
-        <file>image/refresh.png</file>
-        <file>image/return.png</file>
-        <file>qml/addressbar/AddressBar360.qml</file>
-        <file>qml/addressbar/AddressBarBtn360.qml</file>
-        <file>image/addressbarArrow.png</file>
-        <file>qml/statusbar/StatusBar360.qml</file>
-        <file>image/statusbarSlash.png</file>
+        <file>qml/menubar/MenuBar.qml</file>
+        <file>qml/menubar/MenuBarItem.qml</file>
+        <file>qml/buttons/PushButton.qml</file>
+        <file>qml/addressbar/AddressBar.qml</file>
+        <file>qml/addressbar/AddressBarBtn.qml</file>
+        <file>qml/mousearea/ResizeArea.qml</file>
+        <file>qml/window/WindowFrame.qml</file>
+        <file>qml/window/MainWindow.qml</file>
+        <file>qml/window/TitleBar.qml</file>
+        <file>qml/window/Logo.qml</file>
+        <file>qml/window/SysBtn.qml</file>
+        <file>qml/window/sysbtn/BtnLeft.qml</file>
+        <file>qml/window/sysbtn/BtnMid.qml</file>
+        <file>qml/window/sysbtn/BtnRight.qml</file>
+        <file>qml/window/StatusBar.qml</file>
+        <file>qml/TabWidget/TabWidget.qml</file>
+        <file>qml/TabWidget/TabWidgetItem.qml</file>
     </qresource>
 </RCC>
