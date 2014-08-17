@@ -18,5 +18,8 @@
         <file>qml/window/StatusBar.qml</file>
         <file>qml/TabWidget/TabWidget.qml</file>
         <file>qml/TabWidget/TabWidgetItem.qml</file>
+        <file>qml/TabWidget/TabWidgetItemCloseBtn.qml</file>
+        <file>qml/TabWidget/TabWidgetAppendItem.qml</file>
+        <file>images/tabWidgetAppendItem.png</file>
     </qresource>
 </RCC>

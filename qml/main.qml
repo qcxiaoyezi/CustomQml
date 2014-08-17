@@ -164,5 +164,7 @@
 import QtQuick 2.2
 import "window"
 MainWindow{
+    width: 1200
+    height: 700
 
 }

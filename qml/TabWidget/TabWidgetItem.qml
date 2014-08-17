@@ -7,10 +7,17 @@ Item{
     anchors.fill: parent
     focus: true
 
-    property int tabHeadOffset: 40
+    property int itemWidth: 220
+
+    property int tabHeadOffset
+    property string defaultIcon
+    property string defaultTitle: "新建页面"
+
     property color borderColor : "#8aa7bd"
     property color bodyColorGs1 : "#cbdbe8"
     property color bodyColorGs2 : "#c7d5e2"
+
+    signal fuckme(var item)
 
 
     Item{
@@ -18,21 +25,18 @@ Item{
         anchors{left: parent.left; right: parent.right; top: parent.top}
         height: 28;
         /*分割线*/
-        Rectangle{
-            width: parent.width; height: 1
-            anchors.bottom: parent.bottom;
-            color: "#82abc6"
-        }
+        Rectangle{ width: parent.width; height: 0.5; anchors{bottom: parent.bottom; bottomMargin: 1} color: "#05000000" }
+        Rectangle{ width: parent.width; height: 1; anchors.bottom: parent.bottom; color: "#82abc6" }
         Item{
             id: tabHeadBtn
-            width: 220; height: parent.height;
+            width: itemWidth; height: parent.height;
             x: tabHeadOffset + index*(width+1)
             clip: true;
             /*背景*/
             Rectangle{
                 anchors.fill: parent;
                 anchors.bottomMargin: -radius;
-                radius: 5
+                radius: 3
                 border{id: border; width: 1; color: borderColor}
                 gradient: Gradient {
                     GradientStop {id:gs1; position: 0.0; color: bodyColorGs1 }
@@ -40,30 +44,38 @@ Item{
                 }
             }
 
-            Image{
-               anchors.left: parent.left;
-               anchors.leftMargin: 3
-               anchors.verticalCenter: parent.verticalCenter;
-               source: webView.icon
-            }
-
-            Text {
-                anchors{left: parent.left; right: parent.right; leftMargin: 30}
-                anchors.verticalCenter: parent.verticalCenter;
-                anchors.verticalCenterOffset: 1
-
-                text: webView.title;
-                font.family: "微软雅黑"
-                font.pixelSize: 12
-                color: "#202020"
-            }
-
             MouseArea{
                 id: mouseArea
                 anchors.fill: parent;
                 hoverEnabled: true
                 onPressed: {
-                    tabWidgetItem.forceActiveFocus();
+                    tabWidget.activePage = tabWidgetItem;
+                }
+                Image{
+                   anchors.left: parent.left;
+                   anchors.leftMargin: 3
+                   anchors.verticalCenter: parent.verticalCenter;
+    //               source: webView.icon
+                }
+
+                Text {
+                    anchors{left: parent.left; leftMargin: 25; right: closeBtn.left;}
+                    anchors.verticalCenter: parent.verticalCenter;
+                    anchors.verticalCenterOffset: 1
+
+                    text: (webView.title)?webView.title:tabWidgetItem.defaultTitle;
+                    elide: Text.ElideRight;
+                    font.family: "微软雅黑"
+                    font.pixelSize: 12
+                    color: "#202020"
+                }
+
+                TabWidgetItemCloseBtn{
+                    id: closeBtn
+                    anchors{right: parent.right; rightMargin: 5; verticalCenter: parent.verticalCenter}
+                    mouseArea.onClicked: {
+                        fuckme(tabWidgetItem)
+                    }
                 }
             }
         }
@@ -101,7 +113,7 @@ Item{
         }
     }
 
-    state : focus ? "active" : mouseArea.containsMouse ? "hover" : "normal"
+    state : (tabWidget.activePage === tabWidgetItem) ? "active" : mouseArea.containsMouse ? "hover" : "normal"
     states: [
         State {
             name: "normal" ;

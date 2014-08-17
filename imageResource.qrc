@@ -20,5 +20,6 @@
         <file>images/rightSlope.png</file>
         <file>images/leftSlope2.png</file>
         <file>images/rightSlope2.png</file>
+        <file>images/tabWidgetItemCloseBtn.png</file>
     </qresource>
 </RCC>
