@@ -45,6 +45,7 @@ Item{
     Text{
         id: text
         anchors.centerIn: parent
+        renderType: Text.NativeRendering
         font.family: "微软雅黑"
         font.pixelSize: 12
         color: "#5a5e65"

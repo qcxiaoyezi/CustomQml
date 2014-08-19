@@ -20,6 +20,7 @@
         <file>qml/TabWidget/TabWidgetItem.qml</file>
         <file>qml/TabWidget/TabWidgetItemCloseBtn.qml</file>
         <file>qml/TabWidget/TabWidgetAppendItem.qml</file>
-        <file>images/tabWidgetAppendItem.png</file>
+        <file>qml/TabWidget/TabWidgetItemHead.qml</file>
+        <file>qml/TabWidget/TabWidgetArrowBtn.qml</file>
     </qresource>
 </RCC>

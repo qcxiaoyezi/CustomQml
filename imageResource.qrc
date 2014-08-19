@@ -21,5 +21,8 @@
         <file>images/leftSlope2.png</file>
         <file>images/rightSlope2.png</file>
         <file>images/tabWidgetItemCloseBtn.png</file>
+        <file>images/tabWidgetArrowBtn.png</file>
+        <file>images/tabWidgetAppendItem.png</file>
+        <file>images/tabWidgetArrowBtnHover.png</file>
     </qresource>
 </RCC>

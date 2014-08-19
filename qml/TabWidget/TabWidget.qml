@@ -8,8 +8,7 @@ Item{
     property int itemWidth: 220
     property color backgroundColor : "#A4BED4"
     property color coLineColor: "#82abc6"
-    property var activePage
-    property var urls: ["","http://www.github.com"]
+    property var activeItem
 
     /*背景*/
     Rectangle{
@@ -35,30 +34,44 @@ Item{
             model:ListModel {
                 id: urlsModel
                 ListElement {
-                    url: "http://www.hao123.com"
+                    webUrl: "http://www.hao123.com";
+                }
+                ListElement {
+                    webUrl: "http://www.hao123.com";
                 }
             }
             delegate:  TabWidgetItem{
-                tabHeadOffset: 40
+                tabHeadOffset: tabWidgetArrowBtn.width
                 itemWidth: tabWidget.itemWidth
                 onFuckme: {
                     urlsModel.remove(index)
                 }
             }
             onItemAdded: {
-                tabWidget.activePage = item;
+                tabWidget.activeItem = item;
             }
             onItemRemoved: {
 
             }
         }
-
         TabWidgetAppendItem{
             id: tabWidgetAppendItem
-            x: tabWidgetItemRepeater.count * (itemWidth+1) + 40
+            x: tabWidgetItemRepeater.count * (itemWidth+1) + tabWidgetArrowBtn.width
             mouseArea.onClicked: {
-                urlsModel.append({url:"http://www.baidu.com"})
+                urlsModel.append({webUrl:"http://www.baidu.com"})
             }
         }
     }
+
+
+    /*侧边栏 按钮*/
+    TabWidgetArrowBtn{
+        id: tabWidgetArrowBtn
+        width: 35;
+        height: 30;
+
+    }
+
+
+
 }

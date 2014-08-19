@@ -40,6 +40,7 @@ Item{
     Text{
         id: title
         anchors{top: logo.top; topMargin: -4; left: logo.right; leftMargin: 10}
+        renderType: Text.NativeRendering
         text: "360那啥浏览器 6.1"
         font.family: "微软雅黑"
         font.pixelSize: 12
