@@ -57,10 +57,7 @@ Item{
 //            }
 
 
-            javaScriptWindowObjects: {
 
-
-            }
 
 
 
